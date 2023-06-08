@@ -1,1 +1,1 @@
-Football statistics web app.
+Football statistics web app
