@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Statistics App - Teams</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(to bottom, #cfd9df, #e2ebf0);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .team-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .stat-value {
+            margin-left: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teams</h1>
+    <ul>
+        {% for team in teams %}
+            <li>
+                <div class="team-name">{{ team.team }}</div>
+                <div>
+                    <span class="stat-label">Goals Scored:</span>
+                    <span class="stat-value">{{ team.goals_scored }}</span>
+                </div>
+                <div>
+                    <span class="stat-label">Goals Conceded:</span>
+                    <span class="stat-value">{{ team.goals_conceded }}</span>
+                </div>
+                <div>
+                    <span class="stat-label">Yellow Cards:</span>
+                    <span class="stat-value">{{ team.yellow_cards }}</span>
+                </div>
+                <div>
+                    <span class="stat-label">Red Cards:</span>
+                    <span class="stat-value">{{ team.red_cards }}</span>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Statistics App - Player Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(to bottom, #cfd9df, #e2ebf0);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 36px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .player-profile {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .player-details {
+            flex: 1;
+        }
+
+        .player-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .player-stats {
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .stat-label {
+            font-weight: bold;
+            color: #555;
+            margin-right: 10px;
+        }
+
+        .stat-value {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Player Profile</h1>
+    {% for player in players %}
+    <div class="player-profile">
+        <img class="player-avatar" src="{{ player.avatar }}" alt="Player Avatar">
+        <div class="player-details">
+            <h2 class="player-name">{{ player.name }}</h2>
+            <div class="player-info">
+                <span class="detail-label">Age:</span>
+                <span class="detail-value">{{ player.age }}</span>
+            </div>
+            <div class="player-info">
+                <span class="detail-label">Nationality:</span>
+                <span class="detail-value">{{ player.nationality }}</span>
+            </div>
+            <div class="player-info">
+                <span class="detail-label">Position:</span>
+                <span class="detail-value">{{ player.position }}</span>
+            </div>
+            <!-- Add more player details here -->
+        </div>
+        <div class="player-stats">
+            <h3>Player Statistics</h3>
+            <div class="stat-label">Goals Scored:</div>
+            <div class="stat-value">{{ player.goals_scored }}</div>
+            <div class="stat-label">Assists:</div>
+            <div class="stat-value">{{ player.assists }}</div>
+            <!-- Add more player statistics as needed -->
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+
